@@ -21,11 +21,11 @@ except ImportError:
 #------------------------------------------------------------
 
 
-if os.path.exists('/home/tasos/export'):
+if os.path.exists('/home/vmuser/export'):
         pass
 else:
-        os.system('mkdir /home/tasos/export')
-        os.system('touch /home/tasos/export/specs.json')
+        os.system('mkdir /home/vmuser/export')
+        os.system('touch /home/vmuser/export/specs.json')
 
 
 #------------------------------------------------------------
@@ -103,7 +103,7 @@ vmspec['management_net ip'] = ip
 
 speclist.append(vmspec)
 
-with open('/home/tasos/export/specs.json','w') as f1:
+with open('/home/vmuser/export/specs.json','w') as f1:
         json.dump(speclist,f1, indent=4, separators=(',',':'), sort_keys=False)
         #add trailing newline for POSIX compatibility
         f1.write('\n')
